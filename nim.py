@@ -203,7 +203,7 @@ class NimAI():
             return best_action[0], best_action[1]
 
         else:
-            random_action = random.sample(actions, 1)[0]
+            random_action = random.sample(sorted(actions), 1)[0]
             action = random.choices([random_action, best_action], weights=[self.epsilon, 1 - self.epsilon])[0]
             return action[0], action[1]
 
